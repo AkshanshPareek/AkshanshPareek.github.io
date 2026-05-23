@@ -5,7 +5,7 @@
   <title>Akshansh Pareek</title>
   <meta name="author" content="Akshansh Pareek">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="logo.png">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.85em' font-size='82'>🌸</text></svg>">
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap");
@@ -38,7 +38,7 @@
       position: fixed;
       inset: 0;
       z-index: -1;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.58);
       pointer-events: none;
     }
 
@@ -73,23 +73,16 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
-      color: rgba(255, 255, 255, 0.86);
-      font-family: "Inter", sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 0.5px;
       text-decoration: none;
     }
 
     .brand:hover {
-      color: #8fd0ef;
       text-decoration: none;
     }
 
     .brand img {
-      width: 28px;
-      height: 28px;
+      width: 52px;
+      height: 52px;
       object-fit: contain;
       display: block;
     }
@@ -405,16 +398,17 @@
       }
 
       .topnav {
-        align-items: flex-start;
+        align-items: center;
         padding: 14px 16px 0;
+      }
+
+      .brand img {
+        width: 44px;
+        height: 44px;
       }
 
       .navlinks {
         gap: 14px;
-      }
-
-      .brand span {
-        display: none;
       }
 
       .profile {
@@ -478,7 +472,6 @@
   <nav class="topnav">
     <a class="brand" href="#profile">
       <img src="logo.png" alt="Akshansh Pareek logo">
-      <span>Akshansh Pareek</span>
     </a>
 
     <div class="navlinks">
