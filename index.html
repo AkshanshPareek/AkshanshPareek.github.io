@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshansh Pareek | Project Link Check</title>
+
+  <style>
+    :root {
+      --bg: #f6f7f3;
+      --ink: #111827;
+      --muted: #5b6472;
+      --soft: #8b95a1;
+      --line: rgba(17, 24, 39, 0.12);
+      --ok: #087f5b;
+      --bad: #c92a2a;
+      --warn: #9a6700;
+      --link: #1d4ed8;
+      --card: rgba(255, 255, 255, 0.78);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image: url("background..png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.62;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: rgba(248, 250, 252, 0.76);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 42px 0 72px;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 660px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      background: #111827;
+      color: white;
+      padding: 11px 16px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 650;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1f2937;
+    }
+
+    .summary {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 22px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project {
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 16px 42px rgba(17, 24, 39, 0.08);
+    }
+
+    .thumb {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      background: rgba(17, 24, 39, 0.08);
+    }
+
+    .thumb.missing {
+      display: none;
+    }
+
+    .body {
+      padding: 18px 18px 20px;
+    }
+
+    .meta {
+      color: var(--soft);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .links {
+      display: grid;
+      gap: 8px;
+      margin-top: 15px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .link-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 620;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .status {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 3px 8px;
+      background: rgba(17, 24, 39, 0.07);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .status.ok {
+      background: rgba(8, 127, 91, 0.12);
+      color: var(--ok);
+    }
+
+    .status.bad {
+      background: rgba(201, 42, 42, 0.12);
+      color: var(--bad);
+    }
+
+    .status.external {
+      background: rgba(154, 103, 0, 0.12);
+      color: var(--warn);
+    }
+
+    @media (max-width: 920px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        width: min(100% - 24px, 1120px);
+        padding-top: 28px;
+      }
+
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Projects</h1>
+        <p class="subtitle">Simple project-card preview with repo file links and live same-origin link checking.</p>
+      </div>
+
+      <button type="button" onclick="checkAllLinks()">Check links</button>
+    </header>
+
+    <p class="summary" id="summary">Open this from the repo root using a local server or GitHub Pages, then click “Check links”.</p>
+
+    <section class="grid" id="projects"></section>
+  </main>
+
+  <script>
+    const projects = [
+      {
+        year: "2024",
+        title: "Creativity - ERROR 404",
+        image: "Creativity Error 404/creativity error Card.png",
+        description: "A qualitative study of undergraduate students shows how generative AI reshapes creativity, authorship, ownership, and learning.",
+        links: [
+          ["View project", "Creativity Error 404/Creativity Error.pdf"],
+          ["Report", "Creativity Error 404/Creativity_error.pdf"],
+          ["Video", "Creativity Error 404/Creativity_ERROR_404.mp4"]
+        ]
+      },
+      {
+        year: "2025",
+        title: "The Alignment Tax",
+        image: "TheAlignmentTax/sychophanct study card.png",
+        description: "An empirical study of LLM sycophancy examining how emotional fine-tuning may entangle warmth, agreement, and factual reliability.",
+        links: [
+          ["View project", "TheAlignmentTax/SychophancyStudy.pdf"],
+          ["Report", "TheAlignmentTax/Sycophancy_Study_Final_Report.pdf"],
+          ["Video", "TheAlignmentTax/The_Sycophancy_Study.mp4"]
+        ]
+      },
+      {
+        year: "2025",
+        title: "Designing Digital Trust",
+        image: "Designing_digital_trust/designing digital trust card.png",
+        description: "A design research project on making trust, consent, and accountability more legible in digital systems.",
+        links: [
+          ["View project", "Designing_digital_trust/Designing_Digital_Trust.pdf"],
+          ["Report", "Designing_digital_trust/Full Report.pdf"],
+          ["Video", "Designing_digital_trust/Deisgning digital trust video.mp4"]
+        ]
+      },
+      {
+        year: "2025",
+        title: "BHED BHAV",
+        image: "BhedBhav/Bhed Bhav card.png",
+        description: "A bilingual bias evaluation project auditing regional and occupational representation in language models.",
+        links: [
+          ["View project", "BhedBhav/BhedBhav.pdf"],
+          ["Report", "BhedBhav/FinalReport.pdf"]
+        ]
+      },
+      {
+        year: "2025",
+        title: "Disclosure Without Engagement",
+        image: "Positionality statements/disclousre without engegement card.png",
+        description: "An empirical review of FAccT positionality statements and their connection to research framing, methods, and interpretation.",
+        links: [
+          ["View project", "Positionality statements/Disclosure without Engagement.pdf"],
+          ["DOI", "https://doi.org/10.1145/3715275.3732079"]
+        ]
+      },
+      {
+        year: "2024",
+        title: "Samvedha",
+        image: "Samvedha/Samvedha card.png",
+        description: "A service design project proposing an open-network grocery and delivery ecosystem for kirana stores and gig workers.",
+        links: [
+          ["View project", "Samvedha/Samvedha.pdf"],
+          ["Report", "Samvedha/full report.pdf"],
+          ["Video", "Samvedha/Samvedha_Video.mp4"]
+        ]
+      },
+      {
+        year: "2025",
+        title: "SAMVAD",
+        image: "Samvad/samvad card.png",
+        description: "A dialogue-analysis system grounded in Indian epistemology for surfacing knowledge sources, hidden agreements, and value conflicts.",
+        links: [
+          ["View project", "Samvad/SAMVAD.pdf"],
+          ["Demo", "https://samvad-app.onrender.com/"],
+          ["Video", "Samvad/clean_SAMVAD__Dialogue_System.mp4"]
+        ]
+      },
+      {
+        year: "2025",
+        title: "VoiceWeave",
+        image: "other projects/Voiceweave Card.png",
+        description: "An NLP system that detects contribution suppression in group dialogue using structural conversational signals.",
+        links: [
+          ["View project", "other projects/Voiceweave.pdf"],
+          ["Demo", "https://voiceweave-le5t57ivldbvmfcsm5bsez.streamlit.app/"]
+        ]
+      },
+      {
+        year: "2025",
+        title: "FinEquity",
+        image: "FinEquity/FinEquity card.png",
+        description: "A participatory auditing platform for documenting microfinance loan outcomes and generating evidence for appeals.",
+        links: [
+          ["View project", "FinEquity/FinEquity.pdf"],
+          ["Report", "FinEquity/Full Report.pdf"],
+          ["Demo", "https://aksh-hu.github.io/finequity-audit/"],
+          ["Video", "FinEquity/Finequity_Video.mp4"]
+        ]
+      },
+      {
+        year: "2023",
+        title: "Sahaj",
+        image: "Sahaj/sahaj card.png",
+        description: "A systems design project reimagining e-commerce as a culture-first platform for micro-businesses, artisans, and regional producers.",
+        links: [
+          ["View project", "Sahaj/democratizing e commerce.pdf"],
+          ["Report", "Sahaj/Sahaj_Report.pdf"],
+          ["Video", "Sahaj/Sahaj Video.mp4"]
+        ]
+      },
+      {
+        year: "2022",
+        title: "Reddit UX Audit",
+        image: "other projects/Reddit UX Audit Card.png",
+        description: "A usability and heuristic evaluation of Reddit’s onboarding, community discovery, moderation visibility, and information architecture.",
+        links: [
+          ["View project", "other projects/Reddit UX Audit.pdf"]
+        ]
+      },
+      {
+        year: "2024",
+        title: "District Heuristic Evaluation",
+        image: "other projects/Heuristic evaluation card.png",
+        description: "A heuristic usability evaluation of District by Zomato’s event discovery and booking flows.",
+        links: [
+          ["View project", "other projects/Heuristic evaluation(district).pdf"]
+        ]
+      }
+    ];
+
+    const projectsEl = document.getElementById("projects");
+    const summaryEl = document.getElementById("summary");
+
+    function makeUrl(path) {
+      return new URL(path, document.baseURI).href;
+    }
+
+    function isExternal(url) {
+      return /^https?:\/\//i.test(url) && new URL(url).origin !== location.origin;
+    }
+
+    function renderProjects() {
+      projectsEl.innerHTML = projects.map((project, projectIndex) => {
+        const links = project.links.map(([label, href], linkIndex) => {
+          const url = /^https?:\/\//i.test(href) ? href : makeUrl(href);
+
+          return `
+            <div class="link-row">
+              <a href="${url}" target="_blank" rel="noopener" data-href="${href}">
+                ${label}
+              </a>
+              <span class="status" id="status-${projectIndex}-${linkIndex}">idle</span>
+            </div>
+          `;
+        }).join("");
+
+        return `
+          <article class="project">
+            <img
+              class="thumb"
+              src="${makeUrl(project.image)}"
+              alt="${project.title} card image"
+              onerror="this.classList.add('missing')"
+            />
+
+            <div class="body">
+              <div class="meta">${project.year}</div>
+              <h2>${project.title}</h2>
+              <p>${project.description}</p>
+              <div class="links">${links}</div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    async function checkLocalFile(url) {
+      try {
+        const head = await fetch(url, { method: "HEAD", cache: "no-store" });
+        if (head.ok) return true;
+      } catch (error) {
+        // Some local/static servers do not support HEAD. Try GET below.
+      }
+
+      try {
+        const get = await fetch(url, { method: "GET", cache: "no-store" });
+        return get.ok;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    async function checkAllLinks() {
+      if (location.protocol === "file:") {
+        summaryEl.textContent = "Run this through a local server, not file://, so the browser can check files.";
+        return;
+      }
+
+      const anchors = [...document.querySelectorAll("a[data-href]")];
+      let ok = 0;
+      let bad = 0;
+      let external = 0;
+
+      await Promise.all(anchors.map(async (anchor, index) => {
+        const status = anchor.parentElement.querySelector(".status");
+        const href = anchor.dataset.href;
+        const url = /^https?:\/\//i.test(href) ? href : makeUrl(href);
+
+        status.className = "status";
+        status.textContent = "checking";
+
+        if (isExternal(url)) {
+          status.classList.add("external");
+          status.textContent = "external";
+          external += 1;
+          return;
+        }
+
+        const works = await checkLocalFile(url);
+
+        if (works) {
+          status.classList.add("ok");
+          status.textContent = "working";
+          ok += 1;
+        } else {
+          status.classList.add("bad");
+          status.textContent = "missing";
+          bad += 1;
+        }
+      }));
+
+      summaryEl.textContent = `${ok} local links working, ${bad} missing, ${external} external links shown separately.`;
+    }
+
+    renderProjects();
+  </script>
+</body>
+</html>
