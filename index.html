@@ -5,7 +5,7 @@
   <title>Akshansh Pareek</title>
   <meta name="author" content="Akshansh Pareek">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.82em' font-size='78'>AP</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.82em' font-size='76'>AP</text></svg>">
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap");
@@ -15,10 +15,10 @@
       font-family: "Lato", Verdana, Helvetica, sans-serif;
       font-size: 16px;
       line-height: 1.6;
-      color: #222;
+      color: #f2f2f2;
       margin: 0;
       padding: 0;
-      background: #f6f4ef;
+      background: #111;
     }
 
     body::before {
@@ -38,18 +38,18 @@
       position: fixed;
       inset: 0;
       z-index: -1;
-      background: rgba(0, 0, 0, 0.18);
+      background: rgba(0, 0, 0, 0.34);
       pointer-events: none;
     }
 
     a {
-      color: #4A9EC5;
+      color: #8fd0ef;
       text-decoration: none;
       transition: color 0.2s;
     }
 
     a:hover {
-      color: #2a6fc7;
+      color: #bdeaff;
       text-decoration: underline;
     }
 
@@ -57,7 +57,6 @@
       max-width: 820px;
       margin: 0 auto;
       padding: 20px 24px;
-      background: rgba(255, 255, 255, 0.88);
       min-height: 100vh;
     }
 
@@ -74,13 +73,13 @@
       font-family: "Inter", sans-serif;
       font-size: 13px;
       font-weight: 400;
-      color: #555;
+      color: rgba(255, 255, 255, 0.78);
       text-decoration: none;
       letter-spacing: 0.5px;
     }
 
     .topnav a:hover {
-      color: #4A9EC5;
+      color: #8fd0ef;
       text-decoration: none;
     }
 
@@ -88,9 +87,10 @@
       font-family: "Inter", sans-serif;
       font-weight: 400;
       font-size: 22px;
-      color: #444;
+      color: #fff;
       display: inline-block;
       margin: 0 0 12px 0;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
     }
 
     .profile {
@@ -110,7 +110,7 @@
       object-fit: cover;
       object-position: center 20%;
       border-radius: 12px;
-      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.36);
       margin: -22px 0 20px 40px;
     }
 
@@ -120,18 +120,20 @@
       font-size: 36px;
       font-weight: 350;
       letter-spacing: 0.7px;
-      color: #111;
+      color: #fff;
+      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
     }
 
     .profile > p {
-      color: #333;
+      color: rgba(255, 255, 255, 0.9);
       margin: 0 0 10px 0;
       font-size: 15px;
       line-height: 1.65;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.34);
     }
 
     .news-banner {
-      border-left: 3px solid #4A9EC5;
+      border-left: 3px solid #8fd0ef;
       padding-left: 14px;
       margin-top: 14px !important;
     }
@@ -147,18 +149,15 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: #4A9EC5;
+      color: #8fd0ef;
       font-size: 15px;
+      transition: opacity 0.2s, transform 0.2s;
     }
 
     .social-links a:hover {
       text-decoration: none;
-      opacity: 0.75;
-    }
-
-    .social-links svg {
-      width: 18px;
-      height: 18px;
+      opacity: 0.78;
+      transform: translateY(-1px);
     }
 
     .publications {
@@ -180,8 +179,8 @@
     .research-filters {
       display: flex;
       align-items: baseline;
-      flex-wrap: wrap;
       gap: 6px;
+      flex-wrap: wrap;
     }
 
     .filter-btn {
@@ -190,21 +189,21 @@
       padding: 0;
       font-family: "Inter", sans-serif;
       font-size: 13px;
-      color: #999;
+      color: rgba(255, 255, 255, 0.52);
       cursor: pointer;
       transition: color 0.2s;
     }
 
     .filter-btn:hover {
-      color: #444;
+      color: rgba(255, 255, 255, 0.86);
     }
 
     .filter-btn.active {
-      color: #222;
+      color: #fff;
     }
 
     .filter-sep {
-      color: #ccc;
+      color: rgba(255, 255, 255, 0.3);
       font-size: 14px;
     }
 
@@ -226,7 +225,13 @@
       align-items: center;
       gap: 24px;
       padding: 22px 0;
-      border-bottom: 1px solid #e9e9e9;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: background 0.22s ease, transform 0.22s ease;
+    }
+
+    .paper:hover {
+      background: rgba(255, 255, 255, 0.055);
+      transform: translateX(3px);
     }
 
     .paper:last-child {
@@ -244,6 +249,14 @@
       border-radius: 6px;
       cursor: pointer;
       display: block;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    }
+
+    .paper:hover .paper-img img {
+      transform: translateY(-3px) scale(1.018);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.34);
+      filter: saturate(1.05);
     }
 
     .paper-text {
@@ -262,26 +275,21 @@
       font-family: "Inter", sans-serif;
       font-size: 13px;
       font-weight: 400;
-      color: #777;
+      color: rgba(255, 255, 255, 0.66);
     }
 
     .papertitle {
       font-family: "Lato", sans-serif;
       font-size: 15px;
       font-weight: 700;
-      color: #222;
+      color: #fff;
       line-height: 1.45;
     }
 
     .authors {
       font-size: 14px;
-      color: #555;
+      color: rgba(255, 255, 255, 0.78);
       line-height: 1.5;
-    }
-
-    .authors .me {
-      border-bottom: 2px dotted #ccc;
-      padding-bottom: 2px;
     }
 
     .paper-links {
@@ -293,7 +301,11 @@
 
     .paper-links a {
       font-size: 14px;
-      color: #4A9EC5;
+      color: #8fd0ef;
+    }
+
+    .extra-section {
+      margin-top: 36px;
     }
 
     .section-list {
@@ -310,18 +322,29 @@
     .section-title {
       display: block;
       font-size: 15px;
-      color: #222;
+      color: #fff;
     }
 
     .section-desc {
       display: block;
       font-size: 14px;
-      color: #777;
+      color: rgba(255, 255, 255, 0.76);
       margin-top: 2px;
     }
 
-    .extra-section {
-      margin-top: 36px;
+    .art-videos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .art-videos iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 6px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.24);
     }
 
     .footer {
@@ -333,7 +356,7 @@
     .footer p {
       font-family: "Inter", sans-serif;
       font-size: 12px;
-      color: #888;
+      color: rgba(255, 255, 255, 0.62);
       margin: 0;
     }
 
@@ -411,15 +434,6 @@
         margin-bottom: 14px !important;
       }
 
-      .research-filters {
-        flex-wrap: wrap !important;
-        gap: 4px !important;
-      }
-
-      .publications {
-        margin-top: 24px !important;
-      }
-
       .paper {
         flex-direction: column !important;
         align-items: flex-start !important;
@@ -427,12 +441,16 @@
         padding: 20px 0 !important;
       }
 
+      .paper:hover {
+        transform: none;
+      }
+
       .paper-img {
         width: 100% !important;
       }
 
-      .papertitle {
-        font-size: 15px !important;
+      .art-videos {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -452,31 +470,18 @@
       <h1 class="name">Akshansh Pareek</h1>
       <img class="profile-photo" alt="profile photo" src="photo.png">
 
-      <p>I am an emerging HCI/AI researcher and designer. I recently completed my Bachelor of Design at Delhi Technological University, where I trained in interaction design, UX research, and systems thinking while independently developing technical skills in data science, machine learning, NLP, and computational social science.</p>
+      <p>Hi, I am Akshansh Pareek, an emerging HCI/AI researcher and designer. I recently completed my Bachelor of Design at Delhi Technological University, where I trained in interaction design, UX research, and systems thinking while independently building technical skills in data science, machine learning, NLP, and computational social science.</p>
 
-      <p>I recently completed a research fellowship at Sentient Futures under the supervision of Julia Bettina Bossmann, where I researched LLM sycophancy by examining how emotional fine-tuning may entangle politeness, agreement, and factual reliability in language model behavior.</p>
+      <p>I recently completed a research fellowship at Sentient Futures under the supervision of Julia Bettina Bossmann, where I researched LLM sycophancy and how emotional fine-tuning may entangle politeness, agreement, and factual reliability. My research focuses on Human-AI Interaction, Human-Agent Interaction, Responsible AI, NLP, dialogue systems, and participatory AI.</p>
 
-      <p>My research focuses on Human-AI Interaction, Human-Agent Interaction, Responsible AI, NLP, dialogue systems, and participatory AI. I am interested in designing, building, and evaluating AI systems that are transparent, contestable, and socially grounded.</p>
-
-      <p class="news-banner">My design background has made me attentive to the fact that technology is never neutral: it communicates values, shapes behavior, and carries responsibility. I want to build tools and research methods that help people understand, question, and reshape the systems around them.</p>
+      <p class="news-banner">I design, build, and evaluate AI systems that are transparent, contestable, and socially grounded, especially in contexts of creativity, learning, trust, and community participation. Beyond research, I am a 3D artist, video game designer, and story writer for games. I worked on the indie game series Fears to Fathom, and outside work I enjoy 3D cinematography, yoga, ice skating, chess, and video games.</p>
 
       <div class="social-links">
-        <a href="mailto:akshanshpareek25@gmail.com">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          <span>Email</span>
-        </a>
-        <a href="AkshanshPareekCV.pdf" target="_blank">
-          <span>CV</span>
-        </a>
-        <a href="https://github.com/AkshanshPareek" target="_blank">
-          <span>GitHub</span>
-        </a>
-        <a href="https://www.linkedin.com/in/akshansh-pareek-95060a223/" target="_blank">
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://orcid.org/0009-0001-4195-4877" target="_blank">
-          <span>ORCID</span>
-        </a>
+        <a href="mailto:akshanshpareek25@gmail.com">Email</a>
+        <a href="AkshanshPareekCV.pdf" target="_blank">CV</a>
+        <a href="https://github.com/AkshanshPareek" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/akshansh-pareek-95060a223/" target="_blank">LinkedIn</a>
+        <a href="https://orcid.org/0009-0001-4195-4877" target="_blank">ORCID</a>
       </div>
     </section>
 
@@ -486,13 +491,13 @@
         <div class="research-filters">
           <button class="filter-btn active" data-filter="all">All</button>
           <span class="filter-sep">/</span>
-          <button class="filter-btn" data-filter="hai">HCI and AI</button>
+          <button class="filter-btn" data-filter="hai">HCI + AI</button>
           <span class="filter-sep">/</span>
           <button class="filter-btn" data-filter="responsible">Responsible AI</button>
           <span class="filter-sep">/</span>
           <button class="filter-btn" data-filter="participatory">Participatory Systems</button>
           <span class="filter-sep">/</span>
-          <button class="filter-btn" data-filter="design">Design and UX</button>
+          <button class="filter-btn" data-filter="design">Design + UX</button>
         </div>
       </div>
 
@@ -501,7 +506,7 @@
           <div class="paper-img"><img src="Creativity%20Error%20404/creativity%20error%20Card.png" alt="Creativity ERROR 404"></div>
           <div class="paper-text">
             <span class="venue">ICED 2025</span>
-            <span class="papertitle">Creativity - ERROR 404: Navigating Creativity and Ownership in the Age of AI-Assisted Students</span>
+            <span class="papertitle">Creativity - ERROR 404</span>
             <span class="authors">A qualitative study of undergraduate students shows how generative AI reshapes creativity, authorship, ownership, and learning.</span>
             <div class="paper-links">
               <a href="Creativity%20Error%20404/Creativity%20Error.pdf" target="_blank">Project</a>
@@ -514,7 +519,7 @@
         <article class="paper cat-hai cat-responsible">
           <div class="paper-img"><img src="TheAlignmentTax/sychophanct%20study%20card.png" alt="The Alignment Tax"></div>
           <div class="paper-text">
-            <span class="venue">Research Fellowship - Sentient Futures</span>
+            <span class="venue">Sentient Futures Research Fellowship</span>
             <span class="papertitle">The Alignment Tax</span>
             <span class="authors">An empirical study of LLM sycophancy investigating how emotional fine-tuning may entangle warmth, agreement, and factual reliability.</span>
             <div class="paper-links">
@@ -542,8 +547,8 @@
         <article class="paper cat-responsible">
           <div class="paper-img"><img src="BhedBhav/Bhed%20Bhav%20card.png" alt="BHED BHAV"></div>
           <div class="paper-text">
-            <span class="venue">Fairness and NLP</span>
-            <span class="papertitle">BHED BHAV: Measuring Regional and Occupational Bias in Large Language Models</span>
+            <span class="venue">Fairness + NLP</span>
+            <span class="papertitle">BHED BHAV</span>
             <span class="authors">A bilingual bias evaluation project auditing regional and occupational representation in language models in Indian social contexts.</span>
             <div class="paper-links">
               <a href="BhedBhav/BhedBhav.pdf" target="_blank">Project</a>
@@ -556,7 +561,7 @@
           <div class="paper-img"><img src="Positionality%20statements/disclousre%20without%20engegement%20card.png" alt="Disclosure Without Engagement"></div>
           <div class="paper-text">
             <span class="venue">ACM FAccT 2025</span>
-            <span class="papertitle">Disclosure Without Engagement: Positionality Statements at FAccT</span>
+            <span class="papertitle">Disclosure Without Engagement</span>
             <span class="authors">An empirical review of whether researchers move beyond identity disclosure to meaningfully connect positionality with research practice.</span>
             <div class="paper-links">
               <a href="Positionality%20statements/Disclosure%20without%20Engagement.pdf" target="_blank">Project</a>
@@ -569,8 +574,8 @@
           <div class="paper-img"><img src="Samvedha/Samvedha%20card.png" alt="Samvedha"></div>
           <div class="paper-text">
             <span class="venue">Service Design</span>
-            <span class="papertitle">Samvedha: India's First Open Grocery App</span>
-            <span class="authors">An open-network grocery and delivery ecosystem for local kirana stores and gig workers through a cooperative, zero-commission model.</span>
+            <span class="papertitle">Samvedha</span>
+            <span class="authors">An open-network grocery and delivery ecosystem supporting kirana stores and gig workers through a cooperative, zero-commission model.</span>
             <div class="paper-links">
               <a href="Samvedha/Samvedha.pdf" target="_blank">Project</a>
               <a href="Samvedha/full%20report.pdf" target="_blank">Report</a>
@@ -583,7 +588,7 @@
           <div class="paper-img"><img src="Samvad/samvad%20card.png" alt="SAMVAD"></div>
           <div class="paper-text">
             <span class="venue">Dialogue Systems</span>
-            <span class="papertitle">SAMVAD: Dialogue Through Epistemology</span>
+            <span class="papertitle">SAMVAD</span>
             <span class="authors">A dialogue-analysis system grounded in Indian epistemology for surfacing knowledge sources, hidden agreements, and value conflicts.</span>
             <div class="paper-links">
               <a href="Samvad/SAMVAD.pdf" target="_blank">Project</a>
@@ -596,8 +601,8 @@
         <article class="paper cat-hai">
           <div class="paper-img"><img src="other%20projects/Voiceweave%20Card.png" alt="VoiceWeave"></div>
           <div class="paper-text">
-            <span class="venue">NLP and Dialogue Analytics</span>
-            <span class="papertitle">VoiceWeave: Detecting Contribution Suppression in Group Dialogues</span>
+            <span class="venue">NLP + Dialogue Analytics</span>
+            <span class="papertitle">VoiceWeave</span>
             <span class="authors">An NLP system that detects contribution suppression in group dialogue using structural conversational signals.</span>
             <div class="paper-links">
               <a href="other%20projects/Voiceweave.pdf" target="_blank">Project</a>
@@ -609,7 +614,7 @@
         <article class="paper cat-participatory cat-responsible">
           <div class="paper-img"><img src="FinEquity/FinEquity%20card.png" alt="FinEquity"></div>
           <div class="paper-text">
-            <span class="venue">Participatory AI and Microfinance</span>
+            <span class="venue">Participatory AI + Microfinance</span>
             <span class="papertitle">FinEquity</span>
             <span class="authors">A participatory auditing platform for documenting loan outcomes and generating community evidence for appeals against opaque decisions.</span>
             <div class="paper-links">
@@ -625,7 +630,7 @@
           <div class="paper-img"><img src="Sahaj/sahaj%20card.png" alt="Sahaj"></div>
           <div class="paper-text">
             <span class="venue">Systems Design</span>
-            <span class="papertitle">Sahaj: Democratizing E-Commerce</span>
+            <span class="papertitle">Sahaj</span>
             <span class="authors">A culture-first e-commerce ecosystem for micro-businesses, artisans, and regional producers.</span>
             <div class="paper-links">
               <a href="Sahaj/democratizing%20e%20commerce.pdf" target="_blank">Project</a>
@@ -648,10 +653,10 @@
         </article>
 
         <article class="paper cat-design">
-          <div class="paper-img"><img src="other%20projects/Heuristic%20evaluation%20card.png" alt="District heuristic evaluation"></div>
+          <div class="paper-img"><img src="other%20projects/Heuristic%20evaluation%20card.png" alt="District by Zomato"></div>
           <div class="paper-text">
             <span class="venue">Heuristic Evaluation</span>
-            <span class="papertitle">District by Zomato: Heuristic Usability Evaluation</span>
+            <span class="papertitle">District by Zomato</span>
             <span class="authors">A heuristic evaluation of event discovery and booking flows, focusing on consistency, recovery, and transactional confidence.</span>
             <div class="paper-links">
               <a href="other%20projects/Heuristic%20evaluation(district).pdf" target="_blank">Project</a>
@@ -676,22 +681,15 @@
     </section>
 
     <section id="art" class="extra-section">
-      <h2>Art and Games</h2>
-      <ul class="section-list">
-        <li>
-          <span class="section-title">3D cinematography, indie-game environments, and story writing</span>
-          <span class="section-desc">Outside research, I make indie games, cinematography, 3D art, play chess and video games, and practise yoga.</span>
-        </li>
-        <li>
-          <span class="section-title">Showreels</span>
-          <span class="section-desc">
-            <a href="https://www.youtube.com/watch?v=yM8Uyrlwob0" target="_blank">Video 1</a> /
-            <a href="https://www.youtube.com/watch?v=K_jZJiNf6UE" target="_blank">Video 2</a> /
-            <a href="https://www.youtube.com/watch?v=WdmP4ilvCjs" target="_blank">Video 3</a> /
-            <a href="https://www.youtube.com/watch?v=28UecXn1wNI" target="_blank">Video 4</a>
-          </span>
-        </li>
-      </ul>
+      <h2>Art</h2>
+      <p class="section-desc">3D cinematography, game environments, and short visual experiments.</p>
+
+      <div class="art-videos">
+        <iframe src="https://www.youtube.com/embed/yM8Uyrlwob0" title="3D art showreel 1" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/K_jZJiNf6UE" title="3D art showreel 2" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/WdmP4ilvCjs" title="3D art showreel 3" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/28UecXn1wNI" title="3D art showreel 4" allowfullscreen></iframe>
+      </div>
     </section>
 
     <footer class="footer">
@@ -715,7 +713,6 @@
     });
 
     lightbox.addEventListener("click", () => lightbox.classList.remove("active"));
-
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") lightbox.classList.remove("active");
     });
@@ -727,7 +724,6 @@
       btn.addEventListener("click", () => {
         document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
-
         filterClasses.forEach(c => publicationsSection.classList.remove(c));
 
         const filter = btn.dataset.filter;
