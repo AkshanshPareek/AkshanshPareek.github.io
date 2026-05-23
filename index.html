@@ -5,7 +5,7 @@
   <title>Akshansh Pareek</title>
   <meta name="author" content="Akshansh Pareek">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.82em' font-size='76'>AP</text></svg>">
+  <link rel="icon" href="logo.png">
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap");
@@ -38,7 +38,7 @@
       position: fixed;
       inset: 0;
       z-index: -1;
-      background: rgba(0, 0, 0, 0.34);
+      background: rgba(0, 0, 0, 0.42);
       pointer-events: none;
     }
 
@@ -62,11 +62,42 @@
 
     .topnav {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
+      align-items: center;
       gap: 24px;
       max-width: 820px;
       margin: 0 auto;
       padding: 16px 24px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.86);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+
+    .brand:hover {
+      text-decoration: none;
+      color: #8fd0ef;
+    }
+
+    .brand img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .topnav a {
@@ -105,10 +136,10 @@
 
     .profile-photo {
       float: right;
-      width: 170px;
-      aspect-ratio: 1;
+      width: 188px;
+      height: 218px;
       object-fit: cover;
-      object-position: center 20%;
+      object-position: center 18%;
       border-radius: 12px;
       box-shadow: 0 8px 28px rgba(0, 0, 0, 0.36);
       margin: -22px 0 20px 40px;
@@ -125,7 +156,7 @@
     }
 
     .profile > p {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.91);
       margin: 0 0 10px 0;
       font-size: 15px;
       line-height: 1.65;
@@ -160,9 +191,37 @@
       transform: translateY(-1px);
     }
 
+    .extra-section {
+      margin-top: 36px;
+    }
+
+    .section-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .section-list li {
+      padding: 10px 0;
+      line-height: 1.5;
+    }
+
+    .section-title {
+      display: block;
+      font-size: 15px;
+      color: #fff;
+    }
+
+    .section-desc {
+      display: block;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.76);
+      margin-top: 2px;
+    }
+
     .publications {
       padding: 0;
-      margin-top: 12px;
+      margin-top: 36px;
     }
 
     .research-header {
@@ -304,49 +363,6 @@
       color: #8fd0ef;
     }
 
-    .extra-section {
-      margin-top: 36px;
-    }
-
-    .section-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .section-list li {
-      padding: 10px 0;
-      line-height: 1.5;
-    }
-
-    .section-title {
-      display: block;
-      font-size: 15px;
-      color: #fff;
-    }
-
-    .section-desc {
-      display: block;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.76);
-      margin-top: 2px;
-    }
-
-    .art-videos {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 10px;
-    }
-
-    .art-videos iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: 0;
-      border-radius: 6px;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.24);
-    }
-
     .footer {
       margin-top: 60px;
       padding: 20px 0;
@@ -388,10 +404,12 @@
       }
 
       .topnav {
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 14px;
+        align-items: flex-start;
         padding: 14px 16px 0;
+      }
+
+      .navlinks {
+        gap: 14px;
       }
 
       .profile {
@@ -401,10 +419,9 @@
       img.profile-photo {
         float: none !important;
         display: block !important;
-        width: 160px !important;
-        max-width: 160px !important;
-        height: auto !important;
-        aspect-ratio: 1 !important;
+        width: 170px !important;
+        max-width: 170px !important;
+        height: 196px !important;
         margin: 0 0 18px 0 !important;
       }
 
@@ -448,21 +465,24 @@
       .paper-img {
         width: 100% !important;
       }
-
-      .art-videos {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
 
 <body>
   <nav class="topnav">
-    <a href="#profile">About</a>
-    <a href="#research">Projects</a>
-    <a href="#publications">Publications</a>
-    <a href="#art">Art</a>
-    <a href="AkshanshPareekCV.pdf" target="_blank">CV</a>
+    <a class="brand" href="#profile">
+      <img src="logo.png" alt="Akshansh Pareek logo">
+      <span>Akshansh Pareek</span>
+    </a>
+
+    <div class="navlinks">
+      <a href="#profile">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#research">Projects</a>
+      <a href="art.html">Art</a>
+      <a href="AkshanshPareekCV.pdf" target="_blank">CV</a>
+    </div>
   </nav>
 
   <main>
@@ -483,6 +503,24 @@
         <a href="https://www.linkedin.com/in/akshansh-pareek-95060a223/" target="_blank">LinkedIn</a>
         <a href="https://orcid.org/0009-0001-4195-4877" target="_blank">ORCID</a>
       </div>
+    </section>
+
+    <section id="publications" class="extra-section">
+      <h2>Publications</h2>
+      <ul class="section-list">
+        <li>
+          <span class="section-title">Schroeder, H., Pareek, A., & Barocas, S. “Disclosure without Engagement: An Empirical Review of Positionality Statements at FAccT.”</span>
+          <span class="section-desc">Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency (FAccT ’25). <a href="https://doi.org/10.1145/3715275.3732079" target="_blank">DOI</a> / <a href="Positionality%20statements/Disclosure%20without%20Engagement.pdf" target="_blank">PDF</a></span>
+        </li>
+        <li>
+          <span class="section-title">Pareek, A., Goswami, T., & Singh, R. “Creativity - ERROR 404: Navigating Creativity and Ownership in the Age of AI-Assisted Students.”</span>
+          <span class="section-desc">Manuscript accepted at International Conference on Engineering Design 2025. <a href="Creativity%20Error%20404/Creativity%20Error.pdf" target="_blank">Preprint</a></span>
+        </li>
+        <li>
+          <span class="section-title">Co-author. “Exploring the Use of a Web-Based 3D Virtual Environment for Interior Design Work Exhibitions.”</span>
+          <span class="section-desc">Accepted at Graphics Interface Conference. Preprint link to be added once uploaded.</span>
+        </li>
+      </ul>
     </section>
 
     <section id="research" class="publications">
@@ -666,32 +704,6 @@
       </div>
     </section>
 
-    <section id="publications" class="extra-section">
-      <h2>Publications</h2>
-      <ul class="section-list">
-        <li>
-          <span class="section-title">Disclosure Without Engagement: An Empirical Review of Positionality Statements at FAccT</span>
-          <span class="section-desc">ACM FAccT 2025. <a href="https://doi.org/10.1145/3715275.3732079" target="_blank">DOI</a></span>
-        </li>
-        <li>
-          <span class="section-title">Creativity - ERROR 404: Navigating Creativity and Ownership in the Age of AI-Assisted Students</span>
-          <span class="section-desc">Accepted at ICED 2025.</span>
-        </li>
-      </ul>
-    </section>
-
-    <section id="art" class="extra-section">
-      <h2>Art</h2>
-      <p class="section-desc">3D cinematography, game environments, and short visual experiments.</p>
-
-      <div class="art-videos">
-        <iframe src="https://www.youtube.com/embed/yM8Uyrlwob0" title="3D art showreel 1" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/K_jZJiNf6UE" title="3D art showreel 2" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/WdmP4ilvCjs" title="3D art showreel 3" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/28UecXn1wNI" title="3D art showreel 4" allowfullscreen></iframe>
-      </div>
-    </section>
-
     <footer class="footer">
       <p>&copy; 2026 Akshansh Pareek</p>
     </footer>
@@ -717,7 +729,7 @@
       if (e.key === "Escape") lightbox.classList.remove("active");
     });
 
-    const publicationsSection = document.querySelector(".publications");
+    const publicationsSection = document.querySelector("#research");
     const filterClasses = ["filter-hai", "filter-responsible", "filter-participatory", "filter-design"];
 
     document.querySelectorAll(".filter-btn").forEach(btn => {
