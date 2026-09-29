@@ -69,20 +69,14 @@ button{font:inherit}
 
 /* ---------- intro band: big statement + side note + four hairline columns ---------- */
 .intro{padding:clamp(56px,7.5vw,104px) 0 0}
-.intro-grid{display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,.85fr); gap:clamp(26px,5vw,84px); align-items:start}
-.intro-big{margin:0; font-size:clamp(1.45rem,3.5vw,2.75rem); font-weight:400; letter-spacing:-.032em; line-height:1.22; color:var(--ink)}
-.intro-side{padding-top:6px}
-.intro-side p{margin:0 0 16px; font-size:13.5px; line-height:1.62; color:var(--muted); max-width:46ch}
-.intro-side p.first{color:var(--ink2); font-weight:500}
-.more{display:inline-block; font-size:13px; font-weight:500; color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:3px; transition:.2s}
-.more:hover{color:var(--muted); border-color:var(--muted)}
+.intro-grid{display:block}
+.intro-big{margin:0; max-width:44ch; font-size:clamp(1.45rem,3.5vw,2.75rem); font-weight:400; letter-spacing:-.032em; line-height:1.22; color:var(--ink)}
 .cols{display:grid; grid-template-columns:repeat(4,1fr); margin-top:clamp(48px,6.4vw,92px); border-top:1.5px solid var(--ink)}
 .cols>div{padding:24px clamp(14px,2vw,26px) 34px clamp(14px,2vw,26px); border-left:1px solid var(--rule); min-height:150px}
 .cols>div:first-child{border-left:0; padding-left:0}
 .cols h3{margin:0 0 16px; font-size:clamp(1.02rem,1.75vw,1.38rem); font-weight:500; letter-spacing:-.026em; line-height:1.22}
 .cols .tagsline{font-family:var(--mono); font-size:10px; letter-spacing:.1em; color:var(--faint); text-transform:uppercase; line-height:1.9}
 @media(max-width:900px){
-  .intro-grid{grid-template-columns:1fr; gap:26px}
   .cols{grid-template-columns:1fr 1fr}
   .cols>div{border-left:0; border-top:1px solid var(--rule); padding-left:0; min-height:0}
   .cols>div:nth-child(-n+2){border-top:0}
@@ -441,12 +435,7 @@ footer{border-top:1px solid var(--rule); padding:32px 0 44px}
 <section class="intro" id="research">
   <div class="wrap">
     <div class="intro-grid rv">
-      <p class="intro-big">I am a design graduate from Delhi Technological University and a Research Fellow at Sentient Futures, working across human–AI interaction, participatory design, and the social implications of intelligent systems.</p>
-      <div class="intro-side">
-        <p class="first">My work asks what happens when systems become increasingly persuasive, adaptive, or difficult to question.</p>
-        <p>I combine qualitative research, interaction design, and empirical evaluation to study trust, agency, participation, and accountability.</p>
-        <a class="more" href="#work">More about me ⌄</a>
-      </div>
+      <p class="intro-big">I am a UX designer and human–computer interaction researcher. My work spans interaction design and participatory research, studying how intelligent systems shape trust, agency, participation, and accountability.</p>
     </div>
 
     <div class="cols rv">
