@@ -51,7 +51,8 @@ gtag('js',new Date());gtag('config','G-DRVD60081X');</script>
   --sec:clamp(70px,9vw,130px);
   --tight:-0.04em;
   --tighter:-0.055em;
-  --r-panel:clamp(14px,2vw,26px);
+  --r-panel:clamp(12px,1.4vw,22px);
+  --edge:clamp(12px,1.5vw,26px);
   --r-card:14px;
 }
 *{box-sizing:border-box}
@@ -89,7 +90,7 @@ header{
   position:fixed; inset:0 0 auto 0; z-index:80;
   background:rgba(245,245,245,.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
 }
-.nav{max-width:1460px; margin:0 auto; padding:22px var(--gut); display:flex; align-items:center; justify-content:space-between; gap:20px}
+.nav{max-width:none; margin:0 auto; padding:20px var(--edge); display:flex; align-items:center; justify-content:space-between; gap:20px}
 .brand{font-size:clamp(17px,1.6vw,21px); font-weight:600; letter-spacing:-.025em}
 .burger{
   width:46px; height:34px; background:none; border:0; cursor:pointer; padding:0;
@@ -130,22 +131,22 @@ body.menu-open .menu li a{transform:translateY(0)}
 .menu-foot a:hover{color:var(--ink)}
 
 /* ---------- HERO: rounded inset panel ---------- */
-.hero{padding:86px var(--gut) 0; max-width:1460px; margin:0 auto}
+.hero{padding:78px var(--edge) 0; max-width:none; margin:0}
 .panel{
   position:relative; border-radius:var(--r-panel); overflow:hidden;
-  height:clamp(520px, calc(100svh - 116px), 1100px); background:#a6a6a6; isolation:isolate;
+  height:clamp(480px, calc(100svh - 138px), 960px); background:#a6a6a6; isolation:isolate;
 }
 #ink, .hero video{position:absolute; inset:0; width:100%; height:100%; display:block}
 #ink{filter:grayscale(1) contrast(1.06)}
 /* the ink footage, graded down to the reference panel's mid-grey so white type stays legible */
 .hero video{
-  object-fit:cover; filter:grayscale(1) contrast(1.18) brightness(.72);
+  object-fit:cover; filter:grayscale(1) contrast(1.16) brightness(.8);
   opacity:0; transition:opacity 1.2s ease; z-index:1;
 }
 .hero video.on{opacity:1}
 .panel::after{
   content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
-  background:linear-gradient(to bottom, rgba(10,10,10,.30), rgba(10,10,10,.16) 46%, rgba(10,10,10,.44) 100%);
+  background:linear-gradient(to bottom, rgba(10,10,10,.26), rgba(10,10,10,.12) 46%, rgba(10,10,10,.36) 100%);
 }
 .hero-grid{
   position:absolute; inset:0; z-index:3; color:#fff;
@@ -341,12 +342,6 @@ footer{border-top:1px solid var(--rule); padding:32px 0 44px}
 .foot nav{display:flex; gap:18px; flex-wrap:wrap}
 .foot nav a{font-family:var(--mono); font-size:11.5px; color:var(--muted); transition:.2s}
 .foot nav a:hover{color:var(--ink)}
-.credits{font-family:var(--mono); font-size:11px; color:var(--muted)}
-.credits summary{cursor:pointer; list-style:none; border-bottom:1px solid var(--rule); display:inline-block; padding-bottom:4px}
-.credits summary::-webkit-details-marker{display:none}
-.credits summary::before{content:"+ "; color:var(--faint)}
-.credits[open] summary::before{content:"– "}
-.credits p{margin:10px 0 0; line-height:1.7; max-width:90ch}
 
 /* ---------- reveal / a11y ---------- */
 .rv{opacity:0; transform:translateY(24px); transition:opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1)}
@@ -684,14 +679,7 @@ footer{border-top:1px solid var(--rule); padding:32px 0 44px}
       <a href="https://orcid.org/0009-0001-4195-4877">ORCID</a>
       <a href="https://akshanshpareek.github.io/AkshanshPareekCV.pdf">CV</a>
       <a href="https://akshanshpareek.github.io/art.html">Art</a>
-      <a href="https://www.chantalpisarzowski.com/" title="Used with permission">Hero footage — C. Pisarzowski</a>
     </nav>
-  </div>
-  <div class="wrap" style="margin-top:22px">
-    <details class="credits">
-      <summary>Image credits</summary>
-      <p>Hero footage: Chantal Pisarzowski, used with permission. Antipode card: the project's own case-study image. Compass and Action Taken banners: Unsplash (Andrew Guan, Pawel Czerwinski). All remaining project banners: Pexels (free licence, no attribution required). No image on this page depicts an identifiable person except the Antipode case-study silhouette artwork.</p>
-    </details>
   </div>
 </footer>
 
